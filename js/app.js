@@ -276,7 +276,7 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 /* ══════════════════════════════════════════════════════════
    3D SHOWROOM — Three.js
 ══════════════════════════════════════════════════════════ */
-(function initShowroom() {
+function initShowroom() {
   const canvas = document.getElementById('showroom-canvas');
   if (!canvas || !window.THREE) return;
 
@@ -589,14 +589,17 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     renderer.render(scene, camera);
   }
   animate();
-})();
+} 
+/*
 
-/* ══════════════════════════════════════════════════════════
+══════════════════════════════════════════════════════════
    INIT
 ══════════════════════════════════════════════════════════ */
-renderProducts();
-updateCart();
-
+window.addEventListener('DOMContentLoaded', () => {
+  renderProducts();
+  updateCart();
+  initShowroom();
+});
 // Keyboard close
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closePanel(); closeCart(); }
