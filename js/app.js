@@ -589,7 +589,7 @@ function initShowroom() {
     renderer.render(scene, camera);
   }
   animate();
-};
+}
 
 /* ══════════════════════════════════════════════════════════
    INIT
