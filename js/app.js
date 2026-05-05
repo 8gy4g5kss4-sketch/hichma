@@ -600,6 +600,14 @@ window.addEventListener('DOMContentLoaded', () => {
   updateCart();
   initShowroom();
 });
+window.openPanel = openPanel;
+window.toggleWish = toggleWish;
+window.updateQty = updateQty;
+window.selectColor = selectColor;
+window.selectSize = selectSize;
+window.openCart = openCart;
+window.closeCart = closeCart;
+window.closePanel = closePanel;
 // Keyboard close
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closePanel(); closeCart(); }
