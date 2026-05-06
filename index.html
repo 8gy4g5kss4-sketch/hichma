@@ -1,259 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hichma — Where Modesty Meets Luxury</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/base.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HICHMA</title>
 
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/hero.css">
 </head>
+
 <body>
 
-<!-- ══ ANNOUNCEMENT BAR ══ -->
-<div class="announcement-bar">
-  ✦ New Eid Collection Now Live — <em>Free shipping</em> on orders over $150 · Ships to 60+ countries ✦
-</div>
+  <!-- HERO -->
+  <section class="hero">
 
-<!-- ══ NAV ══ -->
-<nav id="navbar">
-  <div class="nav-left">
-    <div class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
-      <span></span><span></span><span></span>
+    <div class="hero-bg">
+      <video autoplay muted loop playsinline>
+        <source src="assets/video/hero.mp4" type="video/mp4">
+      </video>
     </div>
-    <ul class="nav-links">
-      <li><a href="#products">Shop</a></li>
-      <li><a href="#showroom">Showroom</a></li>
-      <li><a href="#story">Our Story</a></li>
-    </ul>
-  </div>
 
-  <a href="#" class="nav-logo">Hich<span>ma</span></a>
+    <div class="hero-overlay"></div>
 
-  <div class="nav-right">
-    <button class="nav-icon-btn" onclick="openCart()" aria-label="Cart">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-      Cart
-      <span class="nav-cart-count" id="cartCount">0</span>
-    </button>
-  </div>
-</nav>
+    <div class="hero-content">
 
-<!-- ══ HERO ══ -->
-<section class="hero-min">
-  <div class="hero-media">
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=90" alt="Hichma"/>
-  </div>
-
-  <h1 class="hero-title">HICH<span>MA</span></h1>
-</section>
-
-<!-- ══ MARQUEE ══ -->
-<div class="marquee-band" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">Handcrafted in Morocco<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">Premium Japanese Fabrics<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">Free Express Worldwide Shipping<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">30-Day Easy Returns<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">4.9★ — 12,000+ Reviews<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">Exclusively Online<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">Handcrafted in Morocco<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">Premium Japanese Fabrics<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">Free Express Worldwide Shipping<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">30-Day Easy Returns<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">4.9★ — 12,000+ Reviews<span class="marquee-gem">✦</span></span>
-    <span class="marquee-item">Exclusively Online<span class="marquee-gem">✦</span></span>
-  </div>
-</div>
-
-<!-- ══ PRODUCTS ══ -->
-<section class="products-section" id="products">
-  <div class="products-header">
-    <div>
-      <div class="section-eyebrow reveal">Featured Collection</div>
-      <h2 class="section-title reveal reveal-delay-1">The <em>Eid Edit</em></h2>
-      <p class="section-sub reveal reveal-delay-2">Each piece is cut from the finest fabrics, finished by hand, and designed to make you feel as beautiful as you are.</p>
-    </div>
-    <div class="products-tabs reveal">
-      <button class="tab-btn active" data-filter="all">All</button>
-      <button class="tab-btn" data-filter="abaya">Abayas</button>
-      <button class="tab-btn" data-filter="hijab">Hijabs</button>
-      <button class="tab-btn" data-filter="set">Sets</button>
-    </div>
-  </div>
-
-  <div class="products-grid" id="productsGrid">
-    <!-- Products rendered by JS -->
-  </div>
-</section>
-
-<!-- ══ 3D SHOWROOM ══ -->
-<div class="showroom-section" id="showroom">
-  <div class="showroom-header">
-    <div class="showroom-tag reveal">Interactive Experience</div>
-    <h2 class="showroom-title reveal reveal-delay-1">The <em>Virtual Boutique</em></h2>
-  </div>
-
-  <canvas id="showroom-canvas" aria-label="3D luxury showroom"></canvas>
-
-  <div class="showroom-controls">
-    <div class="showroom-hint">
-      <span class="showroom-hint-dot"></span>
-      Click garments to explore · Drag to rotate
-    </div>
-  </div>
-</div>
-
-<!-- ══ STORY ══ -->
-<div class="story-section" id="story">
-  <div class="story-visual">
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Hichma atelier"/>
-    <div class="story-visual-overlay"></div>
-  </div>
-  <div class="story-content">
-    <div class="story-year reveal">2018</div>
-    <div class="section-eyebrow reveal">Our Story</div>
-    <h2 class="section-title reveal reveal-delay-1">Born from a <em>Vision</em> of Dignified Beauty</h2>
-    <p class="story-text reveal reveal-delay-2">
-      Hichma was founded in the heart of Marrakech by sisters Fatima and Khadija — two women who believed modest dressing should never mean settling for less.
-      <br><br>
-      The name Hichma — Arabic for modesty and grace — is our guiding principle. Every stitch, every fold, every choice of fabric is made with the intention of helping you feel powerful, elegant, and entirely yourself.
-      <br><br>
-      Today, we ship to women in 60+ countries. Each piece remains handcrafted by artisan families in Fez who have practiced their craft for generations.
-    </p>
-    <div class="story-signature reveal reveal-delay-3">— Fatima & Khadija</div>
-  </div>
-</div>
-
-<!-- ══ BENEFITS ══ -->
-<section class="benefits-section">
-  <div class="section-eyebrow reveal">Why Hichma</div>
-  <h2 class="section-title reveal reveal-delay-1">Crafted with <em>Purpose</em></h2>
-  <div class="benefits-grid">
-    <div class="benefit-card reveal">
-      <div class="benefit-icon">🧵</div>
-      <div class="benefit-title">Artisan Craftsmanship</div>
-      <p class="benefit-text">Every piece is hand-finished by master artisans in Fez using traditional Moroccan techniques passed down through generations.</p>
-    </div>
-    <div class="benefit-card reveal reveal-delay-1">
-      <div class="benefit-icon">🌿</div>
-      <div class="benefit-title">Premium Fabrics Only</div>
-      <p class="benefit-text">We source exclusively from Japanese and Italian mills — crepe, silk, and chiffon that drapes beautifully and breathes in any climate.</p>
-    </div>
-    <div class="benefit-card reveal reveal-delay-2">
-      <div class="benefit-icon">✈️</div>
-      <div class="benefit-title">Free Worldwide Shipping</div>
-      <p class="benefit-text">Complimentary express shipping to 60+ countries on all orders over $150. Discreet, eco-conscious packaging as standard.</p>
-    </div>
-    <div class="benefit-card reveal reveal-delay-3">
-      <div class="benefit-icon">🔄</div>
-      <div class="benefit-title">30-Day Returns</div>
-      <p class="benefit-text">If it doesn't feel right, return it — no questions asked. We want you to love what you wear, unconditionally.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══ REVIEWS ══ -->
-<section class="reviews-section">
-  <div class="reviews-header">
-    <div>
-      <div class="section-eyebrow reveal">Testimonials</div>
-      <h2 class="section-title reveal reveal-delay-1">Loved by Women <em>Worldwide</em></h2>
-    </div>
-    <div class="reviews-score-block reveal">
-      <div class="score-big">4.9</div>
-      <div class="score-stars">★★★★★</div>
-      <div class="score-label">Based on 12,418 reviews</div>
-    </div>
-  </div>
-
-  <div class="reviews-grid">
-    <div class="review-card featured reveal">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-quote">"</div>
-      <p class="review-text">I wore my Hichma abaya to my sister's wedding and received more compliments than the bride. The fabric is extraordinary — it moves like water and doesn't wrinkle. I ordered two more the next morning.</p>
-      <div class="review-footer">
-        <div class="reviewer-avatar">S</div>
-        <div>
-          <div class="reviewer-name">Sara Al-Rashid</div>
-          <div class="reviewer-loc">Dubai, UAE</div>
-        </div>
-        <div class="review-verified">✓ Verified</div>
+      <div class="hero-eyebrow">
+        <span></span>
+        HICHMA 2026
       </div>
+
+      <h1>
+        Quiet Luxury,<br>
+        <em>Powerful Presence.</em>
+      </h1>
+
+      <p>
+        Designed for women who move with intention — refined silhouettes and timeless elegance.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">Explore</a>
+        <a href="#" class="btn-wa">WhatsApp</a>
+      </div>
+
     </div>
 
-    <div class="review-card reveal reveal-delay-1">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-quote">"</div>
-      <p class="review-text">Finally a brand that understands that modest fashion can be genuinely luxurious. The quality rivals designer brands at a fraction of the cost. I'm a customer for life.</p>
-      <div class="review-footer">
-        <div class="reviewer-avatar">A</div>
-        <div>
-          <div class="reviewer-name">Amira Hassan</div>
-          <div class="reviewer-loc">London, UK</div>
-        </div>
-        <div class="review-verified">✓ Verified</div>
-      </div>
-    </div>
-
-    <div class="review-card reveal reveal-delay-2">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-quote">"</div>
-      <p class="review-text">Ordered on Saturday, arrived in Paris by Tuesday. The packaging alone felt like receiving a gift. The abaya itself is even more beautiful in person. Hichma has raised the bar.</p>
-      <div class="review-footer">
-        <div class="reviewer-avatar">L</div>
-        <div>
-          <div class="reviewer-name">Leila Moreau</div>
-          <div class="reviewer-loc">Paris, France</div>
-        </div>
-        <div class="review-verified">✓ Verified</div>
-      </div>
-    </div>
-
-    <div class="review-card reveal">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-quote">"</div>
-      <p class="review-text">The WhatsApp ordering experience is so personal — they helped me choose the right size and color for my body type. Felt like shopping with a stylist, not a chatbot.</p>
-      <div class="review-footer">
-        <div class="reviewer-avatar">N</div>
-        <div>
-          <div class="reviewer-name">Noor Al-Farsi</div>
-          <div class="reviewer-loc">Muscat, Oman</div>
-        </div>
-        <div class="review-verified">✓ Verified</div>
-      </div>
-    </div>
-
-    <div class="review-card reveal reveal-delay-1">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-quote">"</div>
-      <p class="review-text">As a fashion blogger I've tried every modest brand out there. Hichma is in a different league. The attention to detail in the stitching is something you only see in haute couture.</p>
-      <div class="review-footer">
-        <div class="reviewer-avatar">H</div>
-        <div>
-          <div class="reviewer-name">Hana Khalil</div>
-          <div class="reviewer-loc">Kuala Lumpur, MY</div>
-        </div>
-        <div class="review-verified">✓ Verified</div>
-      </div>
-    </div>
-
-    <div class="review-card reveal reveal-delay-2">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-quote">"</div>
-      <p class="review-text">I was skeptical about buying online but the return policy gave me confidence. Now it's the only place I buy abayas. My mother, sister and I have all placed orders.</p>
-      <div class="review-footer">
-        <div class="reviewer-avatar">F</div>
-        <div>
-          <div class="reviewer-name">Fatma Zahra</div>
-          <div class="reviewer-loc">Casablanca, Morocco</div>
-        </div>
-        <div class="review-verified">✓ Verified</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 <!-- ══ EMAIL CAPTURE ══ -->
 <section class="capture-section">
@@ -534,6 +330,6 @@
   </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script type="module" src="./js/app.js"></script>
+<script type="module" src="js/app.js"></script>
 </body>
 </html>
