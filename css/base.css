@@ -1,46 +1,26 @@
-/* RESET (remove default browser styles) */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ROOT COLORS (design system) */
+/* DESIGN TOKENS */
 :root {
-  --gold: #c8a55e;
-  --white: #ffffff;
   --black: #0a0a0a;
+  --white: #ffffff;
+  --gold: #c8a55e;
 }
 
-/* BODY BASE */
+/* BASE */
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   background: var(--black);
   color: var(--white);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* PRIMARY BUTTON */
-.btn-primary {
-  padding: 12px 28px;
-  border: 1px solid var(--gold);
-  color: var(--white);
-  text-decoration: none;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  background: var(--gold);
-  color: #000;
-}
-
-/* WHATSAPP BUTTON */
-.btn-wa {
-  padding: 12px 28px;
-  border: 1px solid #25D366;
-  color: #25D366;
-  text-decoration: none;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+/* REMOVE SCROLLBAR FLASH (optional luxury touch) */
+body::-webkit-scrollbar {
+  display: none;
 }
