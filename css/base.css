@@ -1003,3 +1003,46 @@ footer { background: var(--dark); color: var(--white); padding: 5rem 5% 2.5rem; 
   .benefits-grid { grid-template-columns: 1fr; }
 }
 
+/* ═════════ HERO MINIMAL ═════════ */
+
+.hero-min {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-media {
+  position: absolute;
+  inset: -5%;
+  will-change: transform;
+}
+
+.hero-media img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  transform: translate3d(0,0,0) scale(1.05);
+  filter: brightness(0.75) contrast(1.05);
+}
+
+.hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  font-family: var(--serif);
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+
+  color: #fff;
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.hero-title span {
+  color: var(--gold);
+}

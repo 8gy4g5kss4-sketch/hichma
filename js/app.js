@@ -612,3 +612,35 @@ window.closePanel = closePanel;
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') { closePanel(); closeCart(); }
 });
+/* ═════════ HERO PARALLAX ═════════ */
+
+const hero = document.querySelector('.hero-min');
+const media = document.querySelector('.hero-media');
+
+let targetX = 0;
+let targetY = 0;
+let currentX = 0;
+let currentY = 0;
+
+if (hero && media) {
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+    targetX = x * 30;
+    targetY = y * 30;
+  });
+
+  function animate() {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+
+    media.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) scale(1.05)`;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
