@@ -1,5 +1,46 @@
-body {
+/* RESET (remove default browser styles) */
+* {
   margin: 0;
-  background: black;
-  color: white;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ROOT COLORS (design system) */
+:root {
+  --gold: #c8a55e;
+  --white: #ffffff;
+  --black: #0a0a0a;
+}
+
+/* BODY BASE */
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--black);
+  color: var(--white);
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  padding: 12px 28px;
+  border: 1px solid var(--gold);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--gold);
+  color: #000;
+}
+
+/* WHATSAPP BUTTON */
+.btn-wa {
+  padding: 12px 28px;
+  border: 1px solid #25D366;
+  color: #25D366;
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
 }

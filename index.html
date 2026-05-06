@@ -6,34 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HICHMA</title>
 
-  <!-- CSS -->
+  <!-- Fonts (Typography luxury) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Base styles (reset + global) -->
   <link rel="stylesheet" href="css/base.css">
+
+  <!-- Hero styles (section specific) -->
   <link rel="stylesheet" href="css/hero.css">
 </head>
 
 <body>
 
-  <!-- HERO -->
+  <!-- =========================
+       HERO SECTION (Main landing visual)
+  ========================== -->
   <section class="hero">
 
+    <!-- Background Video -->
     <div class="hero-bg">
       <video autoplay muted loop playsinline>
         <source src="assets/video/hero.mp4" type="video/mp4">
       </video>
     </div>
 
+    <!-- Dark overlay (for readability) -->
     <div class="hero-overlay"></div>
 
+    <!-- Content Layer -->
     <div class="hero-content">
-      <h1>HICHMA</h1>
-      <p>Quiet Luxury</p>
+
+      <!-- Eyebrow (small top label) -->
+      <div class="hero-eyebrow">
+        <span></span>
+        HICHMA 2026
+      </div>
+
+      <!-- Main Title -->
+      <h1>
+        Quiet Luxury,<br>
+        <em>Powerful Presence.</em>
+      </h1>
+
+      <!-- Description -->
+      <p>
+        Designed for women who move with intention — refined silhouettes and elegance.
+      </p>
+
+      <!-- Actions (buttons) -->
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Explore</a>
+        <a href="#" class="btn-wa">WhatsApp</a>
+      </div>
+
     </div>
 
   </section>
 
-  <!-- JS -->
+  <!-- Hero animation script -->
   <script src="js/hero.js"></script>
-  <script src="js/main.js"></script>
 
 </body>
 </html>
