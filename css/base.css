@@ -1,5 +1,10 @@
+/* ============================================
+   HICHMA — BASE
+   Reset · Tokens · Typography · Utilities
+   ============================================ */
+
 /* RESET */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,20 +12,133 @@
 
 /* DESIGN TOKENS */
 :root {
-  --black: #0a0a0a;
-  --white: #ffffff;
-  --gold: #c8a55e;
+
+  /* Palette */
+  --black:       #080705;
+  --espresso:    #1a1209;
+  --ivory:       #f5f0e8;
+  --ivory-muted: #ddd5c4;
+  --beige:       #c9bba8;
+  --sand:        #9a8f82;
+  --gold:        #c8a55e;
+  --gold-light:  #e4c98a;
+  --gold-dark:   #9a7a3a;
+  --white:       #fdfaf5;
+
+  /* Typography */
+  --font-en: 'Cormorant Garamond', Georgia, serif;
+  --font-ar: 'Noto Serif Arabic', serif;
+
+  /* Spacing */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+  --space-2xl: 14rem;
+
+  /* Easing — luxury feel */
+  --ease-luxury:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft:      cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-editorial: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* BASE */
-body {
-  font-family: 'Cormorant Garamond', serif;
-  background: var(--black);
-  color: var(--white);
-  -webkit-font-smoothing: antialiased;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-/* REMOVE SCROLLBAR FLASH (optional luxury touch) */
-body::-webkit-scrollbar {
-  display: none;
+body {
+  font-family: var(--font-en);
+  background-color: var(--black);
+  color: var(--ivory);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* HIDE SCROLLBAR */
+body::-webkit-scrollbar { display: none; }
+body { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* IMAGES */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ARABIC */
+.text-ar {
+  font-family: var(--font-ar);
+  direction: rtl;
+}
+
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity  1.4s var(--ease-luxury),
+    transform 1.4s var(--ease-luxury);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.2s;  }
+.reveal-delay-2 { transition-delay: 0.4s;  }
+.reveal-delay-3 { transition-delay: 0.65s; }
+.reveal-delay-4 { transition-delay: 0.9s;  }
+
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+.cursor {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s var(--ease-soft);
+  will-change: left, top;
+}
+
+.cursor-follower {
+  position: fixed;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(200, 165, 94, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition:
+    left    0.14s var(--ease-editorial),
+    top     0.14s var(--ease-editorial),
+    width   0.5s  var(--ease-luxury),
+    height  0.5s  var(--ease-luxury),
+    opacity 0.4s  var(--ease-soft);
+  will-change: left, top;
+}
+
+.cursor-follower.is-hovering {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(200, 165, 94, 0.2);
+  background: rgba(200, 165, 94, 0.04);
 }
