@@ -1,189 +1,165 @@
 /* ============================================
    HICHMA — HERO
-   Calligraphic Identity · Ivory Mood
+   Logo + WhatsApp · Ivory · Minimal
    ============================================ */
-
-/* Arabic calligraphy font */
-@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap');
 
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 700px;
-  overflow: hidden;
+  min-height: 600px;
+  background: #ebe5d9;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #eae4d9;
+  overflow: hidden;
 }
 
-/* ── VIDEO ── */
-.hero-bg {
+/* ── SUBTLE TEXTURE GRADIENT ── */
+.hero::before {
+  content: '';
   position: absolute;
   inset: 0;
-  z-index: 0;
-}
-
-.hero-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.18);
-  will-change: transform;
-  filter: brightness(0.12) sepia(0.5);
-}
-
-/* ── IVORY OVERLAY ── */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
   background: radial-gradient(
     ellipse at 50% 50%,
-    rgba(234, 228, 217, 0.88) 0%,
-    rgba(218, 210, 195, 0.96) 100%
+    rgba(255,253,248,0.4) 0%,
+    rgba(210,200,183,0.3) 100%
   );
-}
-
-/* ── CONTENT ── */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  gap: 0;
-}
-
-/* ── CALLIGRAPHIC WORD — حشمة ── */
-.hero-logo-text {
-  font-family: 'Scheherazade New', serif;
-  font-size: clamp(7rem, 18vw, 16rem);
-  font-weight: 700;
-  color: #2c1a0e;
-  line-height: 0.9;
-  direction: rtl;
-  letter-spacing: -0.01em;
-
-  /* Ink texture effect */
-  text-shadow:
-    0 2px 8px rgba(44, 26, 14, 0.12),
-    0 1px 0px rgba(44, 26, 14, 0.08);
-
-  /* Animation */
-  opacity: 0;
-  transform: translateY(20px) scale(0.97);
-  transition:
-    opacity  1.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-logo-text.is-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* ── ENGLISH NAME ── */
-.hero-name-en {
-  font-family: var(--font-en);
-  font-size: clamp(0.55rem, 1vw, 0.72rem);
-  font-weight: 300;
-  letter-spacing: 0.65em;
-  text-transform: uppercase;
-  color: #5a3e28;
-  margin-top: 1.8rem;
-  text-indent: 0.65em;
-}
-
-/* ── DIVIDER ── */
-.hero-divider {
-  width: 36px;
-  height: 1px;
-  background: #8b6344;
-  opacity: 0.6;
-  margin: 1.4rem auto;
-}
-
-/* ── TAGLINE ── */
-.hero-tagline {
-  font-family: 'Scheherazade New', serif;
-  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
-  font-weight: 400;
-  color: #6b4c30;
-  direction: rtl;
-  letter-spacing: 0.04em;
-  line-height: 1.8;
+  pointer-events: none;
 }
 
 /* ── CORNER MARKS ── */
 .hero-corner {
   position: absolute;
-  z-index: 3;
-  width: 24px;
-  height: 24px;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
   opacity: 0;
-  animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
+  animation: cornerReveal 1s cubic-bezier(0.16,1,0.3,1) 1.8s forwards;
 }
 
-.hero-corner--tl { top: 2rem; left: 2rem;
-  border-top: 1px solid rgba(139,99,68,0.5);
-  border-left: 1px solid rgba(139,99,68,0.5); }
+.hero-corner--tl {
+  top: 1.8rem; left: 1.8rem;
+  border-top: 1px solid rgba(92,58,28,0.4);
+  border-left: 1px solid rgba(92,58,28,0.4);
+}
+.hero-corner--tr {
+  top: 1.8rem; right: 1.8rem;
+  border-top: 1px solid rgba(92,58,28,0.4);
+  border-right: 1px solid rgba(92,58,28,0.4);
+}
+.hero-corner--bl {
+  bottom: 1.8rem; left: 1.8rem;
+  border-bottom: 1px solid rgba(92,58,28,0.4);
+  border-left: 1px solid rgba(92,58,28,0.4);
+}
+.hero-corner--br {
+  bottom: 1.8rem; right: 1.8rem;
+  border-bottom: 1px solid rgba(92,58,28,0.4);
+  border-right: 1px solid rgba(92,58,28,0.4);
+}
 
-.hero-corner--tr { top: 2rem; right: 2rem;
-  border-top: 1px solid rgba(139,99,68,0.5);
-  border-right: 1px solid rgba(139,99,68,0.5); }
-
-.hero-corner--bl { bottom: 2rem; left: 2rem;
-  border-bottom: 1px solid rgba(139,99,68,0.5);
-  border-left: 1px solid rgba(139,99,68,0.5); }
-
-.hero-corner--br { bottom: 2rem; right: 2rem;
-  border-bottom: 1px solid rgba(139,99,68,0.5);
-  border-right: 1px solid rgba(139,99,68,0.5); }
-
-@keyframes fadeIn {
+@keyframes cornerReveal {
   to { opacity: 1; }
 }
 
-/* ── SCROLL ── */
-.hero-scroll {
-  position: absolute;
-  bottom: 2.2rem;
-  left: 50%;
-  transform: translateX(-50%);
+/* ── CONTENT ── */
+.hero-content {
+  position: relative;
   z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 3.5rem;
+}
+
+/* ── LOGO ── */
+.hero-logo {
   opacity: 0;
-  animation: fadeIn 1.2s ease 2.2s forwards;
+  transform: translateY(20px) scale(0.97);
+  animation: logoReveal 2s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
 }
 
-.hero-scroll__text {
-  font-family: var(--font-en);
-  font-size: 0.55rem;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: #8b6344;
-  opacity: 0.7;
-}
-
-.hero-scroll__line {
+.hero-logo__img {
+  width: clamp(260px, 48vw, 580px);
+  height: auto;
   display: block;
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, #8b6344, transparent);
-  transform-origin: top;
-  animation: scrollPulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite 2.4s;
+  /* remove white background from PNG */
+  mix-blend-mode: multiply;
 }
 
-@keyframes scrollPulse {
-  0%   { transform: scaleY(0); opacity: 0; }
-  40%  { opacity: 1; }
-  100% { transform: scaleY(1); opacity: 0; }
+@keyframes logoReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── WHATSAPP BUTTON ── */
+.hero-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 2.2rem;
+  border: 1px solid rgba(92,58,28,0.45);
+  color: #3b2210;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  direction: rtl;
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 1.4s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;
+
+  transition: 
+    background  0.5s cubic-bezier(0.16,1,0.3,1),
+    color       0.5s cubic-bezier(0.16,1,0.3,1),
+    border-color 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Fill on hover */
+.hero-whatsapp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #3b2210;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+  z-index: 0;
+}
+
+.hero-whatsapp:hover::before {
+  transform: scaleX(1);
+}
+
+.hero-whatsapp:hover {
+  color: #ebe5d9;
+  border-color: #3b2210;
+}
+
+.hero-whatsapp__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: color 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+.hero-whatsapp__text {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

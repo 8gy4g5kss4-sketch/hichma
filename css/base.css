@@ -52,8 +52,8 @@ html {
 
 body {
   font-family: var(--font-en);
-  background-color: var(--black);
-  color: var(--ivory);
+  background-color: #ebe5d9;
+  color: var(--espresso);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
