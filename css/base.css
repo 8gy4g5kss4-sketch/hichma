@@ -2,7 +2,8 @@
    HICHMA — BASE
    Reset · Tokens · Typography · Utilities
    ============================================ */
-
+/* في الـ head أو أول base.css */
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+Arabic:wght@300;400&display=swap');
 /* RESET */
 *, *::before, *::after {
   margin: 0;

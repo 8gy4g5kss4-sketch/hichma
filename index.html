@@ -25,30 +25,50 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursor-follower"></div>
 
-  <!-- HERO -->
-  <section class="hero">
+  
+<!-- HERO -->
+<section class="hero">
 
-    <div class="hero-bg">
-      <video autoplay muted loop playsinline>
-        <source src="assets/video/hero.mp4" type="video/mp4">
-      </video>
-    </div>
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+  </div>
 
-    <div class="hero-overlay"></div>
+  <div class="hero-overlay"></div>
 
-    <div class="hero-content">
-      <p class="hero-label reveal">حشمة</p>
-      <h1 class="hero-title reveal reveal-delay-1">HICHMA</h1>
-      <p class="hero-sub reveal reveal-delay-2">أناقة أصيلة — تُعبّر عنكِ</p>
-    </div>
+  <!-- Corner marks -->
+  <div class="hero-corner hero-corner--tl"></div>
+  <div class="hero-corner hero-corner--tr"></div>
+  <div class="hero-corner hero-corner--bl"></div>
+  <div class="hero-corner hero-corner--br"></div>
 
-    <!-- Scroll indicator -->
-    <div class="hero-scroll reveal reveal-delay-3">
-      <span class="hero-scroll__line"></span>
-    </div>
+  <!-- Content -->
+  <div class="hero-content">
 
-  </section>
+    <!-- الشعار الكاليغرافي — نص فقط -->
+    <h1 class="hero-logo-text reveal">حِشمة</h1>
 
+    <!-- English -->
+    <p class="hero-name-en reveal reveal-delay-1">HICHMA</p>
+
+    <!-- Divider -->
+    <div class="hero-divider reveal reveal-delay-2"></div>
+
+    <!-- Tagline — الآية -->
+    <p class="hero-tagline reveal reveal-delay-3">
+      يُدنينَ عليهنَّ من جلابيبهنَّ
+    </p>
+
+  </div>
+
+  <!-- Scroll -->
+  <div class="hero-scroll">
+    <span class="hero-scroll__text">scroll</span>
+    <span class="hero-scroll__line"></span>
+  </div>
+
+</section>
   <!-- JS -->
   <script src="js/cursor.js" defer></script>
   <script src="js/scroll.js" defer></script>

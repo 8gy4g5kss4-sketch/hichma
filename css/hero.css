@@ -1,17 +1,24 @@
 /* ============================================
    HICHMA — HERO
+   Calligraphic Identity · Ivory Mood
    ============================================ */
+
+/* Arabic calligraphy font */
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap');
 
 .hero {
   position: relative;
+  width: 100%;
   height: 100vh;
+  min-height: 700px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #eae4d9;
 }
 
-/* VIDEO */
+/* ── VIDEO ── */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -24,84 +31,159 @@
   object-fit: cover;
   transform: scale(1.18);
   will-change: transform;
+  filter: brightness(0.12) sepia(0.5);
 }
 
-/* OVERLAYS — cinematic layering */
+/* ── IVORY OVERLAY ── */
 .hero-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    radial-gradient(ellipse at center, rgba(8,7,5,0.15) 0%, rgba(8,7,5,0.85) 100%),
-    linear-gradient(to bottom, rgba(8,7,5,0.3) 0%, transparent 40%, rgba(8,7,5,0.7) 100%);
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(234, 228, 217, 0.88) 0%,
+    rgba(218, 210, 195, 0.96) 100%
+  );
 }
 
-/* CONTENT */
+/* ── CONTENT ── */
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 0;
 }
 
-/* Arabic label above */
-.hero-label {
-  font-family: var(--font-ar);
-  font-size: clamp(0.85rem, 1.5vw, 1rem);
-  font-weight: 300;
-  letter-spacing: 0.35em;
-  color: var(--gold);
-  opacity: 0.85;
-  text-transform: uppercase;
+/* ── CALLIGRAPHIC WORD — حشمة ── */
+.hero-logo-text {
+  font-family: 'Scheherazade New', serif;
+  font-size: clamp(7rem, 18vw, 16rem);
+  font-weight: 700;
+  color: #2c1a0e;
+  line-height: 0.9;
+  direction: rtl;
+  letter-spacing: -0.01em;
+
+  /* Ink texture effect */
+  text-shadow:
+    0 2px 8px rgba(44, 26, 14, 0.12),
+    0 1px 0px rgba(44, 26, 14, 0.08);
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition:
+    opacity  1.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Main title */
-.hero-title {
+.hero-logo-text.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ── ENGLISH NAME ── */
+.hero-name-en {
   font-family: var(--font-en);
-  font-size: clamp(5rem, 12vw, 11rem);
+  font-size: clamp(0.55rem, 1vw, 0.72rem);
   font-weight: 300;
-  letter-spacing: 0.28em;
-  color: var(--ivory);
-  line-height: 1;
-  text-indent: 0.28em; /* compensate letter-spacing on last char */
+  letter-spacing: 0.65em;
+  text-transform: uppercase;
+  color: #5a3e28;
+  margin-top: 1.8rem;
+  text-indent: 0.65em;
 }
 
-/* Subtitle */
-.hero-sub {
-  font-family: var(--font-ar);
-  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
-  font-weight: 300;
-  letter-spacing: 0.15em;
-  color: var(--ivory-muted);
-  margin-top: 0.4rem;
+/* ── DIVIDER ── */
+.hero-divider {
+  width: 36px;
+  height: 1px;
+  background: #8b6344;
+  opacity: 0.6;
+  margin: 1.4rem auto;
 }
 
-/* SCROLL INDICATOR */
+/* ── TAGLINE ── */
+.hero-tagline {
+  font-family: 'Scheherazade New', serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-weight: 400;
+  color: #6b4c30;
+  direction: rtl;
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+}
+
+/* ── CORNER MARKS ── */
+.hero-corner {
+  position: absolute;
+  z-index: 3;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.6s forwards;
+}
+
+.hero-corner--tl { top: 2rem; left: 2rem;
+  border-top: 1px solid rgba(139,99,68,0.5);
+  border-left: 1px solid rgba(139,99,68,0.5); }
+
+.hero-corner--tr { top: 2rem; right: 2rem;
+  border-top: 1px solid rgba(139,99,68,0.5);
+  border-right: 1px solid rgba(139,99,68,0.5); }
+
+.hero-corner--bl { bottom: 2rem; left: 2rem;
+  border-bottom: 1px solid rgba(139,99,68,0.5);
+  border-left: 1px solid rgba(139,99,68,0.5); }
+
+.hero-corner--br { bottom: 2rem; right: 2rem;
+  border-bottom: 1px solid rgba(139,99,68,0.5);
+  border-right: 1px solid rgba(139,99,68,0.5); }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ── SCROLL ── */
 .hero-scroll {
   position: absolute;
-  bottom: 2.8rem;
+  bottom: 2.2rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  animation: fadeIn 1.2s ease 2.2s forwards;
+}
+
+.hero-scroll__text {
+  font-family: var(--font-en);
+  font-size: 0.55rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #8b6344;
+  opacity: 0.7;
 }
 
 .hero-scroll__line {
   display: block;
   width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-  animation: scrollLine 2.2s var(--ease-luxury) infinite;
-  transform-origin: top center;
+  height: 48px;
+  background: linear-gradient(to bottom, #8b6344, transparent);
+  transform-origin: top;
+  animation: scrollPulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite 2.4s;
 }
 
-@keyframes scrollLine {
+@keyframes scrollPulse {
   0%   { transform: scaleY(0); opacity: 0; }
-  30%  { opacity: 1; }
+  40%  { opacity: 1; }
   100% { transform: scaleY(1); opacity: 0; }
 }
